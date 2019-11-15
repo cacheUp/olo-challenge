@@ -35,7 +35,7 @@ function App() {
 
   const mapProductsToItems = products => {
     return products.map((product, index) => ({
-      header: `#${index} ${product.topping}`,
+      header: `Rank #${index + 1}: ${product.topping}`,
       image:
         " https://res.cloudinary.com/cloud-9/image/upload/v1573792206/pizza-toppings.jpg",
       meta: `${product.count} orders`,
@@ -53,7 +53,7 @@ function App() {
     <div
       style={{
         margin: "0 auto",
-        maxWidth: "700px"
+        maxWidth: "1000px"
       }}
     >
       <Header as="h1" icon textAlign="center" style={{ marginTop: "30px" }}>
@@ -63,7 +63,7 @@ function App() {
       <Card.Group
         key={uuidv4()}
         stackable
-        itemsPerRow="3"
+        itemsPerRow="4"
         centered
         items={mapProductsToItems(pizzaArr)}
       />
